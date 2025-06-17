@@ -15,13 +15,23 @@
   <textarea id="sourceOutput" readonly></textarea>
 
   <script>
-    async function fetchSource() {
-      const url = encodeURIComponent(document.getElementById('urlInput').value);
-      const proxyUrl = `https://source-proxy.onrender.com/source?url=${url}`;
-      const response = await fetch(proxyUrl);
-      const text = await response.text();
-      document.getElementById('sourceOutput').value = text;
+async function fetchSource() {
+  const url = encodeURIComponent(document.getElementById('urlInput').value);
+  const proxyUrl = `https://source-proxy.onrender.com/source?url=${url}`;
+
+  try {
+    const response = await fetch(proxyUrl);
+    const data = await response.json();
+    
+    if (data.error) {
+      document.getElementById('sourceOutput').value = `⚠️ Error: ${data.error}`;
+    } else {
+      document.getElementById('sourceOutput').value = data.source;
     }
+  } catch (err) {
+    document.getElementById('sourceOutput').value = "⚠️ Could not connect to server.";
+  }
+}
   </script>
 </body>
 </html>
