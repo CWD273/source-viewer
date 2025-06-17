@@ -1,0 +1,46 @@
+/* General Styles */
+body {
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Input Field */
+input {
+    width: 80%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background: #252526;
+    color: #dcdcdc;
+    border: 1px solid #444;
+}
+
+/* Button */
+button {
+    background-color: #3a3a3a;
+    color: #dcdcdc;
+    padding: 0.5rem 1rem;
+    border: 1px solid #555;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #505050;
+}
+
+/* Iframe Styling */
+iframe {
+    width: 100%;
+    height: 80vh;
+    border: 1px solid #555;
+    background: #252526;
+}
+
+/* Error Message */
+.error {
+    color: #ff6b6b;
+    font-weight: bold;
+}
